@@ -1,0 +1,65 @@
+body {
+    display: block;
+    margin: auto;
+    font-family: "Telefon Black", sans-serif;
+    color: #BBB;
+    background: #191919;
+}
+h1 {
+    box-sizing: border-box;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 49.5px;
+    margin: auto;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: center;
+    width: 60%;
+    border-bottom: 5px solid #cf4747;
+}
+
+div {
+    box-sizing: border-box;
+    display: block;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 31.5px;
+    margin-top: 0px;
+    max-width: 600px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+iframe {
+    margin: auto;
+    display: block;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.about {
+    margin: auto;
+}
+.to_add {
+    font-size: 12px;
+    margin: auto;
+}
+
+hr {
+    width: 60%;
+    border-bottom: 5px solid #cf4747;
+}
+
+a {
+    color: #cf4747;
+}
