@@ -27,16 +27,13 @@ h1 {
 
 div {
     box-sizing: border-box;
+    padding: 10;
     display: block;
     font-size: 21px;
     font-weight: normal;
     line-height: 31.5px;
     margin-top: 0px;
     max-width: 600px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
     text-align: center;
 }
 
@@ -63,10 +60,6 @@ iframe {
 hr {
     width: 60%;
         border-bottom: 5px solid #444;
-}
-
-a {
-    color: #cf4747;
 }
 
 span.l {
