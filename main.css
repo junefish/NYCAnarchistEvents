@@ -3,11 +3,13 @@
 }
 
 body {
-  font-family: 'helvetica neue';
+    font-family: 'helvetica neue' !important;
+    font-weight: 200;
     display: block;
     margin: auto;
     color: #444;
     background: #CCC;
+    padding: 100;
 }
 
 h1 {
@@ -25,7 +27,7 @@ h1 {
     border-bottom: 5px solid #444;
 }
 
-div {
+.text {
     box-sizing: border-box;
     padding: 10;
     display: block;
@@ -33,21 +35,10 @@ div {
     font-weight: normal;
     line-height: 31.5px;
     margin-top: 0px;
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
 }
 
-iframe {
-    margin: auto;
-    display: block;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-}
 
 .about {
     margin: auto;
@@ -59,7 +50,8 @@ iframe {
 
 hr {
     width: 60%;
-        border-bottom: 5px solid #444;
+    border-bottom: 5px solid #444;
+    margin:20;
 }
 
 span.l {
@@ -68,4 +60,21 @@ span.l {
 
 span.r {
     font-weight: 500;
+}
+
+body {
+    margin: 40px 10px;
+    padding: 0;
+}
+
+#loading {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#calendar {
+    max-width: 700px;
+    margin: 0 auto;
 }
