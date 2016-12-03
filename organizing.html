@@ -1,19 +1,63 @@
+<!DOCTYPE html>
+<html>
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-    <h1><span class="r">Anarchist</span><span class="l">Organizing</span><span class="r">Events</span></h1>
+<meta charset='utf-8' />
+<link href='node_modules/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
+<link href='node_modules/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='node_modules/moment/moment.js'></script>
+<script src='node_modules/jquery/dist/jquery.js'></script>
+<script src='node_modules/fullcalendar/dist/fullcalendar.js'></script>
+<script src='node_modules/fullcalendar/dist/gcal.js'></script>
+<script>
+    $(document).ready(function() {
 
-    <div class="about">
-        This calendar aggregates organizing events of several New York anarchist groups.
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,listYear'
+            },
+            displayEventTime: false, // don't show the time column in list view
+            // THIS KEY WON'T WORK IN PRODUCTION!!!
+            // To make your own Google API key, follow the directions here:
+            // http://fullcalendar.io/docs/google_calendar/
+            googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+
+            // US Holidays
+            events: '3ko6ntp6r3h4ieebcbrndseve@group.calendar.google.com',
+
+            eventClick: function(event) {
+                // opens events in a popup window
+                window.open(event.url, 'gcalevent', 'width=700,height=600');
+                return false;
+            },
+
+            loading: function(bool) {
+                $('#loading').toggle(bool);
+            }
+
+        });
+
+    });
+</script>
+</head>
+
+<body>
+    <h1><span class="r">Anarchist</span><span class="l">Events</span><span class="r">NYC</span></h1>
+
+    <div class="about text">
+        This calendar is a calendar of public events of New York anarchist groups.
     </div>
 
-
-
-    <iframe src="https://calendar.google.com/calendar/embed?title=NYC%20Anarchist%20Events&amp;showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23000000&amp;src=ima528je8m99ap5942tbslqp44%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=America%2FNew_York" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no" align="center"></iframe>
     <hr>
 
-    <div class="to_add">
+    <div id='loading'>loading...</div>
+
+    <div id='calendar'></div>
+    <hr>
+
+    <div class="to_add text">
         To add an event to this calendar, fill out <a href="https://docs.google.com/forms/d/13xhXjKkgpUy2NdsNVa3QAJxZesVuJrxic9yuzf882Pg">this form</a>.
     </div>
 
