@@ -27,7 +27,7 @@ h1 {
     font-size: 21px;
     font-weight: normal;
     line-height: 31.5px;
-    max-width: 700px;
+    max-width: 800px;
     text-align: center;
 }
 .about {
@@ -60,6 +60,12 @@ body {
     right: 10px;
 }
 #calendar {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
+}
+.the-base.fc-event {
+    background-color: grey;
+}
+.bluestockings.fc-event {
+    background-color: blue;
 }

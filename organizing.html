@@ -16,7 +16,7 @@
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,listYear'
+                right: 'month,listMonth'
             },
             displayEventTime: false, // don't show the time column in list view
             // THIS KEY WON'T WORK IN PRODUCTION!!!
@@ -24,8 +24,11 @@
             // http://fullcalendar.io/docs/google_calendar/
             googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
 
-            // US Holidays
-            events: '3ko6ntp6r3h4ieebcbrndseve0@group.calendar.google.com',
+            eventSources: [
+                {
+                    googleCalendarId: '3ko6ntp6r3h4ieebcbrndseve0@group.calendar.google.com'
+                },
+            ],
 
             eventClick: function(event) {
                 // opens events in a popup window

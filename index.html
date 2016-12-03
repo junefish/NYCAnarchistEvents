@@ -16,7 +16,7 @@
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,listYear'
+                right: 'month,listMonth'
             },
             displayEventTime: false, // don't show the time column in list view
             // THIS KEY WON'T WORK IN PRODUCTION!!!
@@ -24,8 +24,20 @@
             // http://fullcalendar.io/docs/google_calendar/
             googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
 
-            // US Holidays
-            events: 'ima528je8m99ap5942tbslqp44@group.calendar.google.com',
+            eventSources: [
+                {
+                    googleCalendarId: 'ima528je8m99ap5942tbslqp44@group.calendar.google.com',
+                    className: 'anarchist-events',
+                },
+                {
+                    googleCalendarId: 'glj5531i5vt6aq3i07vlqo09e1qrbkst@import.calendar.google.com',
+                    className: 'the-base'
+                },
+                {
+                    googleCalendarId: '49d38ogbtcddujpt2u5gm39n9td1bv3p@import.calendar.google.com',
+                    className: 'bluestockings',
+                }
+            ],
 
             eventClick: function(event) {
                 // opens events in a popup window
@@ -55,6 +67,7 @@
     <div id='loading'>loading...</div>
 
     <div id='calendar'></div>
+    <div id='toggles'></div>
     <hr>
 
     <div class="to_add text">
