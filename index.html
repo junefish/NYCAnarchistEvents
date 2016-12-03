@@ -9,29 +9,26 @@
 <script src='node-extras/jquery/dist/jquery.js'></script>
 <script src='node-extras/fullcalendar/dist/fullcalendar.js'></script>
 <script src='node-extras/fullcalendar/dist/gcal.js'></script>
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favico.png">
 <script>
     $(document).ready(function() {
-        const sources = [
-                {
-                    googleCalendarId: 'ima528je8m99ap5942tbslqp44@group.calendar.google.com',
-                    className: 'anarchist-events',
-                    title: "Featured Events",
-                    defaultShow: true,
-                },
-                {
-                    googleCalendarId: 'glj5531i5vt6aq3i07vlqo09e1qrbkst@import.calendar.google.com',
-                    className: 'the-base',
-                    title: 'The Base',
-                    defaultShow: true,
-                },
-                {
-                    googleCalendarId: '49d38ogbtcddujpt2u5gm39n9td1bv3p@import.calendar.google.com',
-                    className: 'bluestockings',
-                    title: 'Bluestockings',
-                    defaultShow: false
-                }
-            ];
+        const sources = [{
+            googleCalendarId: 'ima528je8m99ap5942tbslqp44@group.calendar.google.com',
+            className: 'anarchist-events',
+            title: "Featured Events",
+            defaultShow: true,
+        }, {
+            googleCalendarId: 'glj5531i5vt6aq3i07vlqo09e1qrbkst@import.calendar.google.com',
+            className: 'the-base',
+            title: 'The Base',
+            defaultShow: true,
+        }, {
+            googleCalendarId: '49d38ogbtcddujpt2u5gm39n9td1bv3p@import.calendar.google.com',
+            className: 'bluestockings',
+            title: 'Bluestockings',
+            defaultShow: false
+        }];
+        var initialized = false;
 
         $('#calendar').fullCalendar({
             header: {
@@ -55,26 +52,29 @@
 
             loading: function(bool) {
                 $('#loading').toggle(bool);
+                if (!bool && !initialized) {
+                    sources.forEach(function(e) {
+                        var button = document.createElement('input');
+                        var buttonClass = e.className + "-button";
+                        var disableButtons = function() {
+                            $("." + e.className).toggle();
+                            $("." + buttonClass).toggleClass('disabled-button');
+                        };
+                        button.type = 'button';
+                        button.value = e.title;
+                        button.classList.add(buttonClass);
+                        $("#toggles").append(button);
+
+                        button.addEventListener('click', disableButtons, false);
+
+                        if (!e.defaultShow) {
+                            disableButtons();
+                        };
+                    });
+                    initialized = true;
+                };
             }
-
         });
-
-        sources.forEach(function (e) {
-            var button = document.createElement('input');
-            button.type  = 'button';
-            button.value = e.title;
-
-            button.addEventListener('click', function() {
-                $( "." + e.className ).toggle();
-
-            }, false);
-
-            if (!e.defaultShow) {
-                $( "." + e.className ).toggle();
-            };
-            $("#toggles").append(button);
-        });
-
     });
 </script>
 </head>
@@ -87,14 +87,12 @@
     </div>
 
     <hr>
-
-    <div id='loading'>loading...</div>
-
-    <div id='calendar'></div>
-    <hr>
     <div class='to_add text toggle'> Toggle calendars
         <div id='toggles'></div>
     </div>
+    <div id='loading'>loading...</div>
+
+    <div id='calendar'></div>
     <hr>
 
     <div class="to_add text">

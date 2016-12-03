@@ -64,10 +64,18 @@ body {
     margin: 0 auto;
 }
 .the-base.fc-event {
-    background-color: grey;
+    background-color: blue;
 }
 .bluestockings.fc-event {
-    background-color: blue;
+    background-color: hotpink;
+}
+.anarchist-events.fc-event {
+    background-color: red;
+}
+input {margin: 5px;}
+.disabled-button {
+    background-color: lightgrey;
+    color: darkgrey;
 }
 
 .toggle {
