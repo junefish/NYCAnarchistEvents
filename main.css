@@ -69,3 +69,7 @@ body {
 .bluestockings.fc-event {
     background-color: blue;
 }
+
+.toggle {
+    font-size: 16px;
+}
