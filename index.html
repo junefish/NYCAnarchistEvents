@@ -34,9 +34,12 @@
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,listMonth'
+                right: 'month,listWeek'
             },
-            displayEventTime: false, // don't show the time column in list view
+            defaultView: 'listWeek',
+            defaultDate: new Date().toJSON().slice(0,10),
+            navLinks: true, // can click day/week names to navigate views
+            displayEventTime: true, // don't show the time column in list view
             // THIS KEY WON'T WORK IN PRODUCTION!!!
             // To make your own Google API key, follow the directions here:
             // http://fullcalendar.io/docs/google_calendar/
@@ -83,7 +86,7 @@
     <h1><span class="r">Anarchist</span><span class="l">Events</span><span class="r">NYC</span></h1>
 
     <div class="about text">
-        Public events of New York anarchist groups.
+        Public events of New York anarchist and anarchist-ish groups.
     </div>
 
     <hr>
