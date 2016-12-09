@@ -63,13 +63,13 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-.the-base.fc-event {
+.the-base.fc-event, .the-base .fc-event-dot {
     background-color: blue;
 }
-.bluestockings.fc-event {
+.bluestockings.fc-event, .bluestockings .fc-event-dot {
     background-color: hotpink;
 }
-.anarchist-events.fc-event {
+.anarchist-events.fc-event, .anarchist-events .fc-event-dot {
     background-color: red;
 }
 input {margin: 5px;}
