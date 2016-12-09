@@ -72,6 +72,9 @@ body {
 .anarchist-events.fc-event, .anarchist-events .fc-event-dot {
     background-color: red;
 }
+.starr-bar.fc-event, .starr-bar .fc-event-dot {
+    background-color: orange;
+}
 input {margin: 5px;}
 .disabled-button {
     background-color: lightgrey;
