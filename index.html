@@ -53,6 +53,15 @@
                 return false;
             },
 
+            rerenderView: function() {
+                if (initialized) {
+                    sources.forEach(function(e){
+                        if ($("." + e.className +"-button.disabled-button").length) {
+                        $("." + e.className).hide();
+                    };
+                })}
+            },
+
             loading: function(bool) {
                 $('#loading').toggle(bool);
                 if (!bool && !initialized) {

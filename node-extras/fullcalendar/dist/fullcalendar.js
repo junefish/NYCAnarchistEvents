@@ -9897,6 +9897,7 @@ function Calendar_constructor(element, overrides) {
 			currentView.displayEvents(events);
 			unfreezeContentHeight();
 		}
+		currentView.trigger('rerenderView');
 	}
 
 
