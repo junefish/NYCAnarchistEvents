@@ -70,6 +70,10 @@
                 })}
             },
 
+            viewRender: function() {
+                $('.fc-list-view .fc-scroller').css('height', 'auto');
+            },
+
             loading: function(bool) {
                 $('#loading').toggle(bool);
                 if (!bool && !initialized) {
