@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
 <meta charset='utf-8' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='node-extras/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
 <link href='node-extras/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='node-extras/moment/moment.js'></script>
@@ -42,6 +43,7 @@
                 center: 'title',
                 right: 'month,listWeek'
             },
+            height: 'auto',
             defaultView: 'listWeek',
             defaultDate: new Date().toJSON().slice(0,10),
             navLinks: true, // can click day/week names to navigate views
@@ -98,7 +100,11 @@
 </head>
 
 <body>
-    <h1><span class="r">Anarchist</span><span class="l">Events</span><span class="r">NYC</span></h1>
+    <h1>
+        <span class="r">Anarchist</span>
+        <span class="l">Events</span>
+        <span class="r">NYC</span>
+    </h1>
 
     <div class="about text">
         Public events of New York anarchist and anarchist-ish groups.
@@ -115,10 +121,6 @@
 
     <div class="to_add text">
         To add an event to this calendar, fill out <a href="https://docs.google.com/forms/d/13xhXjKkgpUy2NdsNVa3QAJxZesVuJrxic9yuzf882Pg">this form</a>. We prefer links to existing calendars or events.
-    </div>
-
-    <div class="about text">
-        For J20 ride requests and offers, fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSd16eK3gr8B4Z2mvTQJ1fUd9JHA9LzYbG3lqoFeYZ1AZaUlfQ/viewform">this form</a>.
     </div>
 
 </body>

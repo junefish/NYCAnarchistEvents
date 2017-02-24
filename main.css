@@ -19,6 +19,7 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
     border-bottom: 5px solid #444;
+    word-spacing: -0.3em;
 }
 .text {
     box-sizing: border-box;
@@ -63,6 +64,13 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
+@media all and (max-width:800px) {
+    #calendar {
+        margin: 0 -10px;
+    }
+}
+
 .the-base.fc-event, .the-base .fc-event-dot {
     background-color: blue;
 }
