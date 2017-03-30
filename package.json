@@ -1,6 +1,17 @@
- {
-    "name": "node",
+{
+    "name": "nycanarchistevents",
     "version": "1.0.0",
+    "description": "Calendar of NYC anarchist events",
+    "homepage": "http://anarchism.nyc",
+    "author": "CryptoSquad NYC",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MACCNYC/NYCAnarchistEvents.git"
+    },
+    "bugs": {
+        "url": "https://github.com/MACCNYC/NYCAnarchistEvents/issues"
+    },
     "dependencies":
     {
         "fullcalendar": "3.0.1"
