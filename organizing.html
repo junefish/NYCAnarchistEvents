@@ -1,50 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="main.css">
-<meta charset='utf-8' />
-<link href='node_modules/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
-<link href='node_modules/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='node_modules/moment/moment.js'></script>
-<script src='node_modules/jquery/dist/jquery.js'></script>
-<script src='node_modules/fullcalendar/dist/fullcalendar.js'></script>
-<script src='node_modules/fullcalendar/dist/gcal.js'></script>
-<link rel="icon" href="favicon.png">
-<script>
-    $(document).ready(function() {
-
-        $('#calendar').fullCalendar({
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,listMonth'
-            },
-            displayEventTime: false, // don't show the time column in list view
-            // THIS KEY WON'T WORK IN PRODUCTION!!!
-            // To make your own Google API key, follow the directions here:
-            // http://fullcalendar.io/docs/google_calendar/
-            googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
-
-            eventSources: [
-                {
-                    googleCalendarId: '3ko6ntp6r3h4ieebcbrndseve0@group.calendar.google.com'
-                },
-            ],
-
-            eventClick: function(event) {
-                // opens events in a popup window
-                window.open(event.url, 'gcalevent', 'width=700,height=600');
-                return false;
-            },
-
-            loading: function(bool) {
-                $('#loading').toggle(bool);
-            }
-
-        });
-
-    });
-</script>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href='node_modules/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
+    <link href='node_modules/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <link rel="icon" href="favicon.png">
 </head>
 
 <body>
@@ -65,4 +26,43 @@
         To add an event to this calendar, fill out <a href="https://docs.google.com/forms/d/13xhXjKkgpUy2NdsNVa3QAJxZesVuJrxic9yuzf882Pg">this form</a>.
     </div>
 
+    <script src='node_modules/moment/moment.js'></script>
+    <script src='node_modules/jquery/dist/jquery.js'></script>
+    <script src='node_modules/fullcalendar/dist/fullcalendar.js'></script>
+    <script src='node_modules/fullcalendar/dist/gcal.js'></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,listMonth'
+                },
+                displayEventTime: false, // don't show the time column in list view
+                // THIS KEY WON'T WORK IN PRODUCTION!!!
+                // To make your own Google API key, follow the directions here:
+                // http://fullcalendar.io/docs/google_calendar/
+                googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+
+                eventSources: [
+                    {
+                        googleCalendarId: '3ko6ntp6r3h4ieebcbrndseve0@group.calendar.google.com'
+                    },
+                ],
+
+                eventClick: function(event) {
+                    // opens events in a popup window
+                    window.open(event.url, 'gcalevent', 'width=700,height=600');
+                    return false;
+                },
+
+                loading: function(bool) {
+                    $('#loading').toggle(bool);
+                }
+
+            });
+
+        });
+    </script>
 </body>
