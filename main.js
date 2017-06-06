@@ -1,7 +1,7 @@
 (function () { // begin Immediately-Invoked Function Expression
     $(document).ready(function() {
         const sources = [{
-            googleCalendarId: 'ima528je8m99ap5942tbslqp44@group.calendar.google.com',
+            googleCalendarId: '5irab2ggffkj3l451b5qae9l1s@group.calendar.google.com',
             className: 'anarchist-events',
             title: "Featured Events",
             defaultShow: true,
