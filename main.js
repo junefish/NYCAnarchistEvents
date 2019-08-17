@@ -15,6 +15,11 @@
             className: 'bluestockings',
             title: 'Bluestockings',
             defaultShow: false
+        }, {
+            url: 'https://techlearningcollective.com/events/all-fullcalendar-io.json',
+            className: 'tech-learning-collective',
+            title: 'Tech Learning Collective',
+            defaultShow: true
         }
         ];
         var initialized = false;
